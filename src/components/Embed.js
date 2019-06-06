@@ -5,7 +5,7 @@ import Link from './Link'
 const Embed = ({ stream }) => {
 
   return (
-    <div>
+    <React.Fragment>
       <Link href={stream.link} text={stream.type} />
       {stream.type === 'twitch' && (
         <Twitch stream={stream} />
@@ -13,7 +13,7 @@ const Embed = ({ stream }) => {
       {stream.type === 'kek' && (
         <Youtube stream={stream} />
       )}
-    </div>
+    </React.Fragment>
   )
 }
 

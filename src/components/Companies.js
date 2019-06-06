@@ -2,7 +2,6 @@ import Company from './Company'
 import companies from '../companies'
 
 const Companies = () => {
-
   return (
     <div>
       {companies.map(company => (

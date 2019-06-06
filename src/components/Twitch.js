@@ -14,7 +14,7 @@ const TwitchEmbed = ({ stream }) => {
       })
     }
   })
-  console.log('strea', stream.id)
+
   return (
     <div>
       <button
