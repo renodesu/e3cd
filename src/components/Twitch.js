@@ -1,32 +1,60 @@
 import { useState, useEffect } from 'react'
+import ReactModal from 'react-modal'
+ReactModal.setAppElement('#app')
 
+const style = {
+  overlay: {
+    backgroundColor: 'rgba(0,0,0,0.8)'
+  },
+  content: {
+    padding: 0,
+    border: 'none',
+    width: 1000,
+    height: 500,
+    // top: 'auto',
+    right: 'auto',
+    bottom: 'auto',
+    left: '50%',
+    marginLeft: '-500px'
+  }
+}
 const TwitchEmbed = ({ stream }) => {
   const [showEmbed, setShowEmbed] = useState(false)
+  const [contentRef, setContentRef] = useState(null)
 
   let nodeRef = React.createRef()
 
   useEffect(() => {
-    if (nodeRef.current) {
+    if (contentRef) {
       new Twitch.Embed(stream.id, {
-        width: 800,
-        height: 600,
-        channel: stream.embed.channel
+        width: 1000,
+        height: 500,
+        channel: stream.embed.channel,
+        layout: 'video'
       })
     }
   })
-  console.log('strea', stream.id)
+
   return (
-    <div>
+    <React.Fragment>
       <button
         onClick={() => setShowEmbed(!showEmbed)}
       >
-        Embed
+        Twitch (embed)
       </button>
-      {showEmbed && (
-        <div ref={nodeRef} id={stream.id}>
-        </div>
-      )}
-    </div >
+      <ReactModal
+        isOpen={showEmbed}
+        onRequestClose={() => setShowEmbed(false)}
+        shouldCloseOnEsc={true}
+        contentRef={node => setContentRef(node)}
+        style={style}
+      >
+        <div
+          ref={nodeRef}
+          id={stream.id}
+        />
+      </ReactModal>
+    </React.Fragment>
   )
 }
 

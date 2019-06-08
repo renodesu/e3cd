@@ -1,42 +1,40 @@
 import Embed from './Embed'
 import Link from './Link'
 import Logo from './Logo'
+import Countdown from './Countdown'
 
-const formatTime = (timestamp) => {
-  return DateTime.fromSeconds(timestamp).toFormat('dd.MM.yyyy HH:mm')
-}
-
-const diff = (timestamp) => {
-  const now = DateTime.local()
-  return DateTime
-    .fromSeconds(timestamp)
-    .diff(now)
-    .toFormat('dd hh:mm:ss')
-}
+const formatTime = (timestamp) => DateTime.fromSeconds(timestamp).toFormat('dd.MM.yyyy HH:mm')
 
 const Company = ({ company }) => {
   return (
     <div className="company">
-      <div className="logo">
-        <Logo />
+      <div className="row1">
+        <div className="logo">
+          <Logo src={company.logo.src} />
+        </div>
+        <div className="content">
+          <div className="titleRow">
+            <div className="date">
+              {`Starting ${formatTime(company.timestamp)} (local time)`}
+            </div>
+            <Countdown timestamp={company.timestamp} />
+          </div>
+
+        </div>
       </div>
-      <div className="content">
-        <h2>{company.name}</h2>
+      <div className="row3">
+        <div className="links">
+          {company.official && (
+            <Link href={company.official} text="OFFICIAL" />
+          )}
 
-
-        <p>
-          {formatTime(company.timestamp)}
-        </p>
-        <p>
-          diff: {diff(company.timestamp)}
-        </p>
-        <Link href={company.official} text="OFFICIAL" />
-        {company.streams.map((stream, index) => (
-          <Embed
-            key={index}
-            stream={stream}
-          />
-        ))}
+          {company.streams.map((stream, index) => (
+            <Embed
+              key={index}
+              stream={stream}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )

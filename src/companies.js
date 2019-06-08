@@ -1,9 +1,10 @@
 const companies = [
   {
     name: 'Microsoft',
+    id: 'microsoft',
     timestamp: 1560110400,
     logo: {
-      src: ''
+      src: 'microsoft.png'
     },
     official: 'https://www.xbox.com/e3',
     streams: [
@@ -19,11 +20,12 @@ const companies = [
   },
   {
     name: 'Bethesda',
+    id: 'bethesda',
     timestamp: 1560126600,
     logo: {
-      src: ''
+      src: 'bethesda.jpg'
     },
-    official: null,
+    official: 'https://bethesda.net',
     streams: [
       // {
       //   id: 'bethesda1',
@@ -45,9 +47,10 @@ const companies = [
   },
   {
     name: 'PC Gaming Show',
+    id: 'pcgamer',
     timestamp: 1560186000,
     logo: {
-      src: ''
+      src: 'pcgamer.jpg'
     },
     official: 'https://www.pcgamingshow.com',
     streams: [
@@ -63,11 +66,12 @@ const companies = [
   },
   {
     name: 'Ubisoft',
+    id: 'ubisoft',
     timestamp: 1560196800,
     logo: {
-      src: ''
+      src: 'ubisoft.jpg'
     },
-    official: null,
+    official: 'https://www.ubisoft.com',
     streams: [
       {
         id: 'ubisoft11',
@@ -81,18 +85,29 @@ const companies = [
   },
   {
     name: 'Square Enix',
+    id: 'squareenix',
     timestamp: 1560214800,
     logo: {
-      src: ''
+      src: 'squareenix.jpg'
     },
     official: 'https://e3.square-enix-games.com/en-us/',
-    streams: []
+    streams: [
+      {
+        id: 'nintendo1',
+        type: 'twitch',
+        link: 'https://www.twitch.tv/squareenix',
+        embed: {
+          channel: 'squareenix'
+        }
+      }
+    ]
   },
   {
     name: 'Nintendo',
+    id: 'nintendo',
     timestamp: 1560268800,
     logo: {
-      src: ''
+      src: 'nintendo.png'
     },
     official: 'https://e3.nintendo.com/',
     streams: [
