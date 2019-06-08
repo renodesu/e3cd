@@ -1,6 +1,6 @@
-const Logo = ({ src = 'https://placekitten.com/100/100' }) => {
+const Logo = ({ src }) => {
   return (
-    <img src={src} alt="" />
+    <img src={`src/logos/${src}`} alt="" />
   )
 }
 

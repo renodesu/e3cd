@@ -1,5 +1,5 @@
-import webpack from 'webpack'
-import config from '../webpack.config'
+const webpack = require('webpack')
+const config = require('../webpack.config.prod')
 
 console.log('Generating minified bundle. This will take a moment...')
 

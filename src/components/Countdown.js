@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import withTime from './withTime'
 
 const diff = (timestamp) => {
   return DateTime
     .fromSeconds(timestamp)
     .diff(DateTime.local())
-    .toFormat('dd hh:mm:ss')
+    .toFormat("d'd' hh:mm:ss")
 }
 
 const Countdown = ({ timestamp }) => {
@@ -22,4 +22,4 @@ const Countdown = ({ timestamp }) => {
   )
 }
 
-export default Countdown
+export default withTime(Countdown)

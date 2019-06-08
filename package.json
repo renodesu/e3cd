@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node scripts/serve.js",
-    "build": ""
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js"
   },
   "dependencies": {
     "@babel/core": "7.4.5",
@@ -27,6 +28,6 @@
     "react-dom": "16.8.6",
     "react-modal": "^3.8.1",
     "react-player": "1.11.0",
-    "webpack": "4.32.2"
+    "webpack": "4.33.0"
   }
 }
