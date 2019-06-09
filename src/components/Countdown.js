@@ -14,10 +14,13 @@ const Countdown = ({ timestamp }) => {
   // setInterval(() => {
   //   setTime(new Date())
   // }, 1000)
+  const text = DateTime.local() < DateTime.fromSeconds(timestamp)
+    ? diff(timestamp)
+    : 'DONE'
 
   return (
     <div className="countdown">
-      {diff(timestamp)}
+      {text}
     </div>
   )
 }

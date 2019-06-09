@@ -10,12 +10,14 @@ const Companies = () => {
   // }, 1000)
   return (
     <div>
-      {companies.map(company => (
-        <Company
-          key={company.name}
-          company={company}
-        />
-      ))}
+      {companies
+        .sort((a, b) => a.timestamp - b.timestamp)
+        .map(company => (
+          <Company
+            key={company.name}
+            company={company}
+          />
+        ))}
     </div>
   )
 }

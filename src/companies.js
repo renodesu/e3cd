@@ -7,6 +7,7 @@ const companies = [
       src: 'microsoft.png'
     },
     official: 'https://www.xbox.com/e3',
+    mixer: 'Xbox',
     streams: [
       {
         id: 'ms1',
@@ -26,6 +27,7 @@ const companies = [
       src: 'bethesda.jpg'
     },
     official: 'https://bethesda.net',
+    mixer: 'Bethesda',
     streams: [
       // {
       //   id: 'bethesda1',
@@ -53,6 +55,7 @@ const companies = [
       src: 'pcgamer.jpg'
     },
     official: 'https://www.pcgamingshow.com',
+    mixer: 'PCGamer',
     streams: [
       {
         id: 'pcgaming1',
@@ -72,6 +75,7 @@ const companies = [
       src: 'ubisoft.jpg'
     },
     official: 'https://www.ubisoft.com',
+    mixer: 'Ubisoft',
     streams: [
       {
         id: 'ubisoft11',
@@ -91,6 +95,7 @@ const companies = [
       src: 'squareenix.jpg'
     },
     official: 'https://e3.square-enix-games.com/en-us/',
+    mixer: 'SquareEnix',
     streams: [
       {
         id: 'nintendo1',
@@ -110,6 +115,7 @@ const companies = [
       src: 'nintendo.png'
     },
     official: 'https://e3.nintendo.com/',
+    mixer: 'Nintendo',
     streams: [
       {
         id: 'nintendo1',
@@ -117,6 +123,26 @@ const companies = [
         link: 'https://www.twitch.tv/nintendo',
         embed: {
           channel: 'nintendo'
+        }
+      }
+    ]
+  },
+  {
+    name: 'Devolver Digital',
+    id: 'devolverdigital',
+    timestamp: 1560132000,
+    logo: {
+      src: 'devolverdigital.png'
+    },
+    official: 'https://www.devolverdigital.com/',
+    mixer: 'DevolverDigital',
+    streams: [
+      {
+        id: 'devolver1',
+        type: 'twitch',
+        link: 'https://www.twitch.tv/twitch',
+        embed: {
+          channel: 'twitch'
         }
       }
     ]

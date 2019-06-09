@@ -11,6 +11,10 @@ const App = () => {
             <br />
             All times in local time
           </div>
+          <div className="highlight">
+            ALL-IN-ONE convenience Twitch stream:&nbsp;
+            <a className="link" href="https://www.twitch.tv/twitch">Twitch</a>
+          </div>
         </div>
         <Companies />
       </div>

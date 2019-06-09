@@ -28,6 +28,10 @@ const Company = ({ company }) => {
             <Link href={company.official} text="OFFICIAL" />
           )}
 
+          {company.mixer && (
+            <Link href={`https://mixer.com/${company.mixer}`} text="MIXER" />
+          )}
+
           {company.streams.map((stream, index) => (
             <Embed
               key={index}
